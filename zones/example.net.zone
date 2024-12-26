@@ -1,0 +1,26 @@
+{
+    "$origin": "example.net.",
+    "$ttl": 3600,
+    "soa": {
+        "mname": "ns1.example.net.",
+        "rname": "admin.example.net.",
+        "serial": "2024122601",
+        "refresh": 3600,
+        "retry": 600,
+        "expire": 604800,
+        "minimum": 86400
+    },
+    "ns": [
+        { "host": "ns1.example.net." },
+        { "host": "ns2.example.net." }
+    ],
+    "a": [
+        { "name": "@", "ttl": 400, "value": "10.10.10.1" },
+        { "name": "www", "ttl": 400, "value": "10.10.10.2" },
+        { "name": "mail", "ttl": 400, "value": "10.10.10.3" }
+    ],
+    "aaaa": [
+        { "name": "@", "ttl": 400, "value": "2001:db8:5678::1" },
+        { "name": "www", "ttl": 400, "value": "2001:db8:5678::2" }
+    ]
+}
