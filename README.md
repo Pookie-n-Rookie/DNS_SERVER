@@ -122,7 +122,12 @@ The DNS query and response structure follows the format outlined in RFC 1035, wh
 - Handles Common Record Types: A, AAAA, NS, SOA.
 - Supports Reverse Lookups: Based on the zone data provided.
 - Query Resolution: Resolves queries against configured zones.
-
+# Installation and Usage
+## Step 1: Clone the Repository
+```bash
+Copy code
+git clone https://github.com/your-repo-url.git
+```
 
 
 
