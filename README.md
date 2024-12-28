@@ -17,7 +17,7 @@ markdown
 Copy code
 # Setting Up the Python Environment
 
-This guide will help you set up a Python virtual environment and install the required dependencies from the `requirements.txt` file. 
+This guide will help you set up a Python virtual environment and install the required dependencies from the `requirement.txt` file. 
 
 ## Prerequisites
 
@@ -54,7 +54,7 @@ source venv/bin/activate
 After activating the virtual environment, install the required dependencies:
 
 ```bash
-pip install -r requirements.txt
+pip install -r requirement.txt
 ```
 ## Start the DNS server:
 
