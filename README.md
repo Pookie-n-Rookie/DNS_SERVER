@@ -1,5 +1,6 @@
 # DNS Server
-
+# What is a DNS server?
+A DNS server (Domain Name System server) is a system that translates human-readable domain names (like www.example.com) into machine-readable IP addresses (like 93.184.216.34). The DNS server acts as a "phonebook" of the internet, enabling users to access websites and other resources without needing to remember IP addresses.
 
 
 
@@ -16,7 +17,7 @@ This final nameserver can be thought of as a dictionary on a rack of books, in w
 
 
 
-Request message format
+## Request message format
 All DNS messages have the same format:
 ```text
                +---------------------+
