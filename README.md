@@ -66,7 +66,7 @@ Open another terminal and use nslookup to test:
 
 ```bash
 
-# Query default A record for example.com
+# Query default @(domain name specified in the ORIGIN) record for example.com
 nslookup example.com 127.0.0.1
 
 # Query specific record types
