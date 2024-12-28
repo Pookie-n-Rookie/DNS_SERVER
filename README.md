@@ -2,36 +2,40 @@
 
 Request message format
 All DNS messages have the same format:
+```text
+               +---------------------+
+               |        Header       |
+               +---------------------+
+               |       Question      | the question for the name server
+               +---------------------+
+               |        Answer       | Resource Records (RRs) answering the question
+               +---------------------+
+               |      Authority      | RRs pointing toward an authority
+               +---------------------+
+               |      Additional     | RRs holding additional information
+               +---------------------+
+               Query and request messages fill out different parts of the message. Our query will contain the Header and Question sections.
+               Header
+               The header has the following format:
+```
 
-+---------------------+
-|        Header       |
-+---------------------+
-|       Question      | the question for the name server
-+---------------------+
-|        Answer       | Resource Records (RRs) answering the question
-+---------------------+
-|      Authority      | RRs pointing toward an authority
-+---------------------+
-|      Additional     | RRs holding additional information
-+---------------------+
-Query and request messages fill out different parts of the message. Our query will contain the Header and Question sections.
-Header
-The header has the following format:
+```text
+      0  1  2  3  4  5  6  7  8  9  A  B  C  D  E  F
+      +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
+      |                      ID                       |
+      +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
+      |QR|   Opcode  |AA|TC|RD|RA|   Z    |   RCODE   |
+      +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
+      |                    QDCOUNT                    |
+      +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
+      |                    ANCOUNT                    |
+      +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
+      |                    NSCOUNT                    |
+      +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
+      |                    ARCOUNT                    |
+      +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
 
-0  1  2  3  4  5  6  7  8  9  A  B  C  D  E  F
-+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
-|                      ID                       |
-+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
-|QR|   Opcode  |AA|TC|RD|RA|   Z    |   RCODE   |
-+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
-|                    QDCOUNT                    |
-+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
-|                    ANCOUNT                    |
-+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
-|                    NSCOUNT                    |
-+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
-|                    ARCOUNT                    |
-+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
+```
 In this diagram, each cell represents a single bit. In each row, there are sixteen columns, representing two bytes of data. The diagram is split into rows to make it easier to read, but the actual message is a continuous series of bytes.
 
 As both queries and responses share a header format, some of the fields aren't relevant to our query, and will be set to 0. A full desciption of each of these fields can be found in RFC1035 Section 4.1.1.
@@ -61,19 +65,20 @@ AA AA - ID
 00 00 - Number of additional records
 To get the query parameters, we concatenate the values of the fields QR to RCODE, remembering that fields not mentioned above are set to 0. This gives 0000 0001 0000 0000, which is 01 00 in hexadecimal. This represents a standard DNS query.
 
-Question
+# Question
 The question section has the format:
-
-0  1  2  3  4  5  6  7  8  9  A  B  C  D  E  F
-+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
-|                                               |
-/                     QNAME                     /
-/                                               /
-+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
-|                     QTYPE                     |
-+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
-|                     QCLASS                    |
-+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
+```text
+      0  1  2  3  4  5  6  7  8  9  A  B  C  D  E  F
+      +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
+      |                                               |
+      /                     QNAME                     /
+      /                                               /
+      +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
+      |                     QTYPE                     |
+      +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
+      |                     QCLASS                    |
+      +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
+```
 QNAME: This contains the URL who's IP address we wish to find. It is encoded as a series of 'labels'. Each label corresponds to a section of the URL. The URL example.com contains two sections, example, and com.
 
 To construct a label, we URL-encode the section, producing a series of bytes. The label is that series of bytes, preceded by an unsigned integer byte containing the number of bytes in the section. To URL-encode our URL, we can just lookup the the ASCII code for each character.
