@@ -94,6 +94,7 @@ https://github.com/user-attachments/assets/39a72657-db8b-4ba6-b011-082333783cd1
 
 
 ### Explanation of dns_enumeration.py
+for testing I have used google.com and instagram.com(you might check for other sites too)
 
 https://github.com/user-attachments/assets/92eb43aa-aecc-4e0e-9b2f-672ea216c727
 
