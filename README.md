@@ -26,7 +26,7 @@ This guide will help you set up a Python virtual environment and install the req
 
 ## Steps
 
-###Clone the Repository
+### Clone the Repository
 
 First, clone the repository from GitHub:
 
