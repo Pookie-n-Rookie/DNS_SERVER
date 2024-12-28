@@ -89,10 +89,10 @@ enter the domain:< enter as you desire >
 ## Videos
 
 ### Explanation of mydns.py
-<video width="320" height="240" controls>
-  <source src="https://github.com/Pookie-n-Rookie/DNS_SERVER/raw/main/mydns%20(1).mp4" type="video/mp4">
 
-</video>
+https://github.com/user-attachments/assets/39a72657-db8b-4ba6-b011-082333783cd1
+
+
 
 ### Explanation of dns_enumeration.py
 <video width="320" height="240" controls>
