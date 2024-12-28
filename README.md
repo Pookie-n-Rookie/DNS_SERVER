@@ -7,14 +7,14 @@ This server listens for DNS queries, processes them, and responds with the appro
 
 The DNS query and response structure follows the format outlined in RFC 1035, where the request is divided into the header and question sections, and the response includes the answer, authority, and additional sections.
 
-### Features
+## Features
+### mydns.py
 - Handles Common Record Types: A, AAAA, NS, SOA.
 - Supports Reverse Lookups: Based on the zone data provided.
 - Query Resolution: Resolves queries against configured zones.
-Here’s a concise README.md for creating a Python virtual environment and installing dependencies from requirements.txt:
+### dns_enumeration.py
+- returns various important information about the target like DNS record types, host names, IP addresses and much more depending upon the configuration of that target system.
 
-markdown
-Copy code
 # Setting Up the Python Environment
 
 This guide will help you set up a Python virtual environment and install the required dependencies from the `requirement.txt` file. 
