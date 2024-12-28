@@ -85,6 +85,21 @@ python enumeration.py
 
 enter the domain:< enter as you desire >
 ```
+# Testing:
+## Videos
+
+### Explanation of mydns.py
+<video width="320" height="240" controls>
+  <source src="https://github.com/Pookie-n-Rookie/DNS_SERVER/raw/main/mydns%20(1).mp4" type="video/mp4">
+
+</video>
+
+### Explanation of dns_enumeration.py
+<video width="320" height="240" controls>
+  <source src="https://github.com/Pookie-n-Rookie/DNS_SERVER/raw/main/dns_enumeration.mp4" type="video/mp4">
+
+</video>
+
 ## References
 
 1. **RFC 1035** - Domain Names - Implementation and Specification: [Read Here](https://datatracker.ietf.org/doc/html/rfc1035)  
