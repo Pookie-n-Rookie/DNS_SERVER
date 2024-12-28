@@ -123,11 +123,55 @@ The DNS query and response structure follows the format outlined in RFC 1035, wh
 - Supports Reverse Lookups: Based on the zone data provided.
 - Query Resolution: Resolves queries against configured zones.
 # Installation and Usage
-## Step 1: Clone the Repository
+## Clone the Repository
 ```bash
-Copy code
-git clone https://github.com/your-repo-url.git
+git clone https://github.com/Pookie-n-Rookie/my_dns.git
 ```
+## Start the DNS server:
+
+```bash
+python mydns.py
+```
+
+Open another terminal and use nslookup to test:
+
+```bash
+
+# Query default A record for example.com
+nslookup example.com 127.0.0.1
+
+# Query specific record types
+nslookup -type=a example.com 127.0.0.1
+nslookup -type=aaaa example.com 127.0.0.1
+nslookup -type=soa example.com 127.0.0.1
+nslookup -type=ns example.com 127.0.0.1
+
+# Query subdomain (e.g., www.example.com)
+nslookup www.example.com 127.0.0.1
+```
+## Run the enumeration script:
+
+```bash
+python enumeration.py
+```
+enter the domain:< enter as you desire >
+
+## References
+
+1. **RFC 1035** - Domain Names - Implementation and Specification: [Read Here](https://datatracker.ietf.org/doc/html/rfc1035)  
+2. **Hand-Writing DNS Messages** by Routley: [Read Here](https://routley.io/posts/hand-writing-dns-messages)  
+
+
+
+## Disclaimer
+This project is made for educational purposes only. It is intended to demonstrate how a DNS server operates and should not be used in production environments. Always ensure security and compliance when dealing with network services.
+
+
+
+
+
+
+
 
 
 
