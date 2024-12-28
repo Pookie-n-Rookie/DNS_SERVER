@@ -86,7 +86,6 @@ python enumeration.py
 enter the domain:< enter as you desire >
 ```
 # Testing:
-## Videos
 
 ### Explanation of mydns.py
 
@@ -95,10 +94,10 @@ https://github.com/user-attachments/assets/39a72657-db8b-4ba6-b011-082333783cd1
 
 
 ### Explanation of dns_enumeration.py
-<video width="320" height="240" controls>
-  <source src="https://github.com/Pookie-n-Rookie/DNS_SERVER/raw/main/dns_enumeration.mp4" type="video/mp4">
 
-</video>
+https://github.com/user-attachments/assets/92eb43aa-aecc-4e0e-9b2f-672ea216c727
+
+
 
 ## References
 
